@@ -4,12 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+public class EventController {
 
-    @RequestMapping(path = {"/", "/home"})
-    public String home(){
-        return "index";
+    @RequestMapping(path = "/events")
+    public String events(){
+        return "events";
     }
-
-
 }
