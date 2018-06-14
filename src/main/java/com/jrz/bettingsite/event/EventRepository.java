@@ -1,4 +1,4 @@
-package com.jrz.bettingsite.repository;
+package com.jrz.bettingsite.event;
 
 
 //import org.springframework.data.jpa.repository.JpaRepository;

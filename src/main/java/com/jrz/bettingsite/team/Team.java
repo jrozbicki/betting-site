@@ -1,6 +1,6 @@
-package com.jrz.bettingsite.model;
+package com.jrz.bettingsite.team;
 
-public class Team {
+public class  Team {
 
     private long id;
     private String name;

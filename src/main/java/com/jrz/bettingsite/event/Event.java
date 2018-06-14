@@ -1,4 +1,6 @@
-package com.jrz.bettingsite.model;
+package com.jrz.bettingsite.event;
+
+import com.jrz.bettingsite.team.Team;
 
 public class Event {
 

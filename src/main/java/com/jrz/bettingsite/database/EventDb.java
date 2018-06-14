@@ -1,6 +1,6 @@
 package com.jrz.bettingsite.database;
 
-import com.jrz.bettingsite.model.Event;
+import com.jrz.bettingsite.event.Event;
 
 public class EventDb {
 

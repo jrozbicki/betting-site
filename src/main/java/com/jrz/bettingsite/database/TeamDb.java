@@ -1,6 +1,6 @@
 package com.jrz.bettingsite.database;
 
-import com.jrz.bettingsite.model.Team;
+import com.jrz.bettingsite.team.Team;
 
 public class TeamDb {
 
