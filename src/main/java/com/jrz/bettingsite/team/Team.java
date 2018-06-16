@@ -1,17 +1,28 @@
 package com.jrz.bettingsite.team;
 
-public class  Team {
+import com.jrz.bettingsite.player.Player;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+public class Team {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     private String name;
+    @OneToMany(targetEntity = Player.class, fetch = FetchType.EAGER)
+    private List<Player> players;
 
     public Team(){
 
     }
 
-    public Team(long id, String name) {
+    public Team(long id, String name, List<Player> players) {
         this.id = id;
         this.name = name;
+        this.players = players;
     }
 
     @Override
@@ -19,6 +30,7 @@ public class  Team {
         return "Team{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", players=" + players +
                 '}';
     }
 
@@ -36,5 +48,13 @@ public class  Team {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
     }
 }

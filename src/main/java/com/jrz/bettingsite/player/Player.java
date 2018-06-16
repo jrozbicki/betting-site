@@ -2,16 +2,21 @@ package com.jrz.bettingsite.player;
 
 import com.jrz.bettingsite.team.Team;
 
+import javax.persistence.*;
+
+@Entity
 public class Player {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
     private int age;
-
+    @OneToOne(targetEntity = Team.class, fetch = FetchType.EAGER)
     private Team team;
 
-    public Player(){
-
+    public Player(String name){
+        this.name = name;
     }
 
     public Player(long id, String name, int age, Team team) {
