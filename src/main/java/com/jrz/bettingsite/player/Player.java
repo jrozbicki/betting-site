@@ -12,7 +12,7 @@ public class Player {
     private long id;
     private String name;
     private int age;
-    @OneToOne(targetEntity = Team.class, fetch = FetchType.EAGER)
+    @ManyToOne
     private Team team;
 
     public Player(String name){

@@ -1,5 +1,6 @@
 package com.jrz.bettingsite.team;
 
+import com.jrz.bettingsite.event.Event;
 import com.jrz.bettingsite.player.Player;
 
 import javax.persistence.*;
@@ -12,8 +13,10 @@ public class Team {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     private String name;
-    @OneToMany(targetEntity = Player.class, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "team")
     private List<Player> players;
+    @ManyToMany
+    private List<Event> events;
 
     public Team(){
 
@@ -56,5 +59,13 @@ public class Team {
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
     }
 }

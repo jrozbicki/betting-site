@@ -11,10 +11,10 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
-    @OneToOne(targetEntity = Team.class, fetch = FetchType.EAGER)
+    @OneToOne
     private Team home;
     private double homeOdds;
-    @OneToOne(targetEntity = Team.class, fetch = FetchType.EAGER)
+    @OneToOne
     private Team away;
     private double awayOdds;
     private int result;
