@@ -11,5 +11,5 @@ public interface TeamService {
 
     public Optional<Team> findById(Long id);
 
-    public Team save(Team team);
+    public void saveTeam(Team team);
 }

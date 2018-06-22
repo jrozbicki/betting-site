@@ -15,6 +15,10 @@ public class Player {
     @ManyToOne
     private Team team;
 
+    public Player(){
+
+    }
+
     public Player(String name){
         this.name = name;
     }

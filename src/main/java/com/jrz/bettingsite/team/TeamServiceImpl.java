@@ -1,9 +1,10 @@
 package com.jrz.bettingsite.team;
 
+import com.jrz.bettingsite.player.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class TeamServiceImpl implements TeamService {
@@ -21,9 +22,10 @@ public class TeamServiceImpl implements TeamService {
         return teamRepository.findById(id);
     }
 
+    // TODO throwing exception
     @Override
-    public Team save(Team team){
-        return teamRepository.save(team);
+    public void saveTeam(Team team){
+        teamRepository.save(team);
     }
 
 }

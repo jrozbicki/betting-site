@@ -1,5 +1,6 @@
 package com.jrz.bettingsite.team;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jrz.bettingsite.event.Event;
 import com.jrz.bettingsite.player.Player;
 
@@ -13,9 +14,9 @@ public class Team {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     private String name;
-    @OneToMany(mappedBy = "team")
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     private List<Player> players;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     private List<Event> events;
 
     public Team(){
@@ -53,6 +54,8 @@ public class Team {
         this.name = name;
     }
 
+    // to avoid infinite recursion between Team and Player
+    @JsonIgnore
     public List<Player> getPlayers() {
         return players;
     }

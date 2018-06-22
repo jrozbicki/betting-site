@@ -2,7 +2,29 @@ package com.jrz.bettingsite.player;
 
 import com.jrz.bettingsite.team.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class PlayerServiceImpl /*implements TeamService*/ {
+import java.util.Optional;
 
+@Service
+public class PlayerServiceImpl implements PlayerService {
+
+    @Autowired
+    private PlayerRepository playerRepository;
+
+    @Override
+    public Iterable<Player> findAll() {
+        return playerRepository.findAll();
+    }
+
+    @Override
+    public Optional<Player> findById(Long id) {
+        return playerRepository.findById(id);
+    }
+
+    // TODO throwing exception
+    @Override
+    public void savePlayer(Player player) {
+        playerRepository.save(player);
+    }
 }
