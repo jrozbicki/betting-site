@@ -14,9 +14,9 @@ public class Team {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     private String name;
-    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
+    @OneToMany
     private List<Player> players;
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany
     private List<Event> events;
 
     public Team(){

@@ -11,3 +11,7 @@ INSERT INTO player (id, age, name, team_id) VALUES
 (5, 33, 'Luis Suarez', 2),
 (6, 33, 'Antoine Griezzman', 3),
 (7, 33, 'Odrizola', 3);
+
+INSERT INTO event (id, name, home_id, home_odds, away_id, away_odds, result) VALUES
+(1, "Fixture 1: Real - Barca",1,1.51,2,1.82,1),
+(2, "Fixture 1: Real - Athletico",1,1.20,3,2.12,1);
