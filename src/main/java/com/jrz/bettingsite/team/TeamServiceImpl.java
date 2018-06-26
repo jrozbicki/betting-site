@@ -28,4 +28,9 @@ public class TeamServiceImpl implements TeamService {
         teamRepository.save(team);
     }
 
+    @Override
+    public Iterable<Player> findPlayersFromTeam(Long id) {
+        return teamRepository.findById(id).get().getPlayers();
+    }
+
 }

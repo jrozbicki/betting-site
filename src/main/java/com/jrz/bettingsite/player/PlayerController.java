@@ -7,25 +7,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(path = "/player")
 public class PlayerController {
 
     @Autowired
     PlayerService playerService;
 
 
-    @RequestMapping(path = "/all")
+    @RequestMapping(path = "/players")
     public @ResponseBody Iterable<Player> getAllTeams(){
         return playerService.findAll();
     }
 
-    @RequestMapping(path = "/{id}")
+    @RequestMapping(path = "/players/{id}")
     public @ResponseBody Optional<Player> findById(@PathVariable Long id){
         return playerService.findById(id);
     }
 
-    @RequestMapping(path = "/add", method = RequestMethod.POST)
-    public void saveTeam(@RequestBody Player player){
+    @RequestMapping(method = RequestMethod.POST, path = "/players")
+    public void savePlayer(@RequestBody Player player){
             playerService.savePlayer(player);
         }
 }

@@ -11,25 +11,28 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(path = "/team")
 public class TeamController {
 
     @Autowired
     TeamService teamService;
 
 
-    @RequestMapping(path = "/all")
+    @RequestMapping(path = "/teams")
     public @ResponseBody Iterable<Team> getAllTeams(){
         return teamService.findAll();
     }
 
-    @RequestMapping(path = "/{id}")
+    @RequestMapping(path = "teams/{id}")
     public @ResponseBody Optional<Team> findById(@PathVariable Long id){
         return teamService.findById(id);
     }
 
-    @RequestMapping(path = "/add", method = RequestMethod.POST)
+    @RequestMapping(path = "teams/{id}/players")
+    public @ResponseBody Iterable<Player> getPlayersFromTeam(@PathVariable Long id){
+        return teamService.findPlayersFromTeam(id);
+    }
+    @RequestMapping(method = RequestMethod.POST, path = "/teams")
     public void saveTeam(@RequestBody Team team){
             teamService.saveTeam(team);
-        }
+    }
 }

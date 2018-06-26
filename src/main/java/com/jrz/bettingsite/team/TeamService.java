@@ -1,5 +1,6 @@
 package com.jrz.bettingsite.team;
 
+import com.jrz.bettingsite.player.Player;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -12,4 +13,6 @@ public interface TeamService {
     public Optional<Team> findById(Long id);
 
     public void saveTeam(Team team);
+
+    public Iterable<Player> findPlayersFromTeam(Long id);
 }

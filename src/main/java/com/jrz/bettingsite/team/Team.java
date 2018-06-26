@@ -14,7 +14,7 @@ public class Team {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     private String name;
-    @OneToMany
+    @OneToMany(mappedBy = "team")
     private List<Player> players;
     @ManyToMany
     private List<Event> events;
@@ -23,10 +23,11 @@ public class Team {
 
     }
 
-    public Team(long id, String name, List<Player> players) {
+    public Team(long id, String name, List<Player> players, List<Event> events) {
         this.id = id;
         this.name = name;
         this.players = players;
+        this.events = events;
     }
 
     @Override
@@ -64,6 +65,8 @@ public class Team {
         this.players = players;
     }
 
+    // to avoid infinite recursion between Team and Event
+    @JsonIgnore
     public List<Event> getEvents() {
         return events;
     }
