@@ -1,6 +1,8 @@
 package com.jrz.bettingsite.event;
 
 import com.jrz.bettingsite.team.Team;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 
@@ -8,7 +10,7 @@ import javax.persistence.*;
 public class Event {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     @OneToOne(fetch = FetchType.EAGER)
@@ -17,6 +19,7 @@ public class Event {
     @OneToOne(fetch = FetchType.EAGER)
     private Team away;
     private double awayOdds;
+    @NotFound(action = NotFoundAction.IGNORE)
     private int result;
 
     public Event(){
