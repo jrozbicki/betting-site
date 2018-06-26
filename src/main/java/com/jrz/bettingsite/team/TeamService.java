@@ -8,11 +8,15 @@ import java.util.Optional;
 @Service
 public interface TeamService {
 
-    public Iterable<Team> findAll();
+    Iterable<Team> findAll();
 
-    public Optional<Team> findById(Long id);
+    Optional<Team> findById(Long id);
 
-    public void saveTeam(Team team);
+    void saveTeam(Team team);
 
-    public Iterable<Player> findPlayersFromTeam(Long id);
+    Iterable<Player> findPlayersFromTeam(Long id);
+
+    void updateTeam(Team team, Long id);
+
+    void deleteTeam(Team team);
 }

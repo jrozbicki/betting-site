@@ -8,9 +8,13 @@ import java.util.Optional;
 @Service
 public interface EventService {
 
-    public Iterable<Event> findAll();
+    Iterable<Event> findAll();
 
-    public Optional<Event> findById(Long id);
+    Optional<Event> findById(Long id);
 
-    public void saveEvent(Event event);
+    void saveEvent(Event event);
+
+    void updateEvent(Event event, Long id);
+
+    void deleteEvent(Event event);
 }

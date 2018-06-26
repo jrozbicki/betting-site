@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -31,8 +29,19 @@ public class TeamController {
     public @ResponseBody Iterable<Player> getPlayersFromTeam(@PathVariable Long id){
         return teamService.findPlayersFromTeam(id);
     }
+
     @RequestMapping(method = RequestMethod.POST, path = "/teams")
-    public void saveTeam(@RequestBody Team team){
+    public @ResponseBody void saveTeam(@RequestBody Team team){
             teamService.saveTeam(team);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, path = "/teams/{id}")
+    public @ResponseBody void updateTeam(@RequestBody Team team, @PathVariable Long id){
+        teamService.updateTeam(team, id);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, path = "/teams/{id}")
+    public @ResponseBody void deleteTeam(@RequestBody Team team, @PathVariable Long id){
+        teamService.deleteTeam(team);
     }
 }

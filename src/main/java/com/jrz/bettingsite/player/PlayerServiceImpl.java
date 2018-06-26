@@ -22,9 +22,18 @@ public class PlayerServiceImpl implements PlayerService {
         return playerRepository.findById(id);
     }
 
-    // TODO throwing exception
     @Override
     public void savePlayer(Player player) {
         playerRepository.save(player);
+    }
+
+    @Override
+    public void updatePlayer(Player player, Long id) {
+        playerRepository.save(player);
+    }
+
+    @Override
+    public void deleteTeam(Player player) {
+        playerRepository.delete(player);
     }
 }

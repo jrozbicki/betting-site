@@ -12,4 +12,8 @@ public interface PlayerService {
     public Optional<Player> findById(Long id);
 
     public void savePlayer(Player player);
+
+    void updatePlayer(Player player, Long id);
+
+    void deleteTeam(Player player);
 }

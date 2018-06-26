@@ -21,9 +21,18 @@ public class EventServiceImpl implements EventService {
         return eventRepository.findById(id);
     }
 
-    //TODO implement this method
     @Override
     public void saveEvent(Event event) {
+        eventRepository.save(event);
+    }
 
+    @Override
+    public void updateEvent(Event event, Long id) {
+        eventRepository.save(event);
+    }
+
+    @Override
+    public void deleteEvent(Event event) {
+        eventRepository.delete(event);
     }
 }

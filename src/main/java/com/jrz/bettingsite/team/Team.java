@@ -23,7 +23,7 @@ public class Team {
 
     }
 
-    public Team(long id, String name, List<Player> players, List<Event> events) {
+    public Team(Long id, String name, List<Player> players, List<Event> events) {
         this.id = id;
         this.name = name;
         this.players = players;
