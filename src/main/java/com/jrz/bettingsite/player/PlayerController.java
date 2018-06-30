@@ -15,7 +15,7 @@ public class PlayerController {
 
 
     @RequestMapping(path = "/players")
-    public @ResponseBody Iterable<Player> getAllTeams(){
+    public @ResponseBody Iterable<Player> getAllPlayers(){
         return playerService.findAll();
     }
 
