@@ -36,6 +36,15 @@ public class Event {
         this.result = result;
     }
 
+    public Event(String name, Team home, double homeOdds, Team away, double awayOdds, int result) {
+        this.name = name;
+        this.home = home;
+        this.homeOdds = homeOdds;
+        this.away = away;
+        this.awayOdds = awayOdds;
+        this.result = result;
+    }
+
     @Override
     public String toString() {
         return "Event{" +

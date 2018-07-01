@@ -23,6 +23,10 @@ public class Team {
 
     }
 
+    public Team(String name){
+        this.name = name;
+    }
+
     public Team(long id, String name){
         this.id = id;
         this.name = name;
